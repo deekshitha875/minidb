@@ -21,8 +21,9 @@ from btree import BTree
 from storage import save, load
 from wal import log_operation, replay, clear
 
-HOST = "127.0.0.1"
-PORT = 6379  # same default port as Redis (easy to remember)
+import os
+HOST = "0.0.0.0"  # accept connections from anywhere (required for cloud)
+PORT = int(os.environ.get("PORT", 6379))  # Railway sets PORT automatically
 
 
 def handle_client(conn, addr, tree, lock):

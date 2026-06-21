@@ -1,0 +1,2 @@
+# MiniDB has no external dependencies — pure Python stdlib only
+# This file is required by Railway to detect a Python project
