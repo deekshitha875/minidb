@@ -1,0 +1,11 @@
+# Database files (generated at runtime)
+*.db
+*.wal
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code
+.vscode/
