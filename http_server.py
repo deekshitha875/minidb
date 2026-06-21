@@ -66,6 +66,29 @@ class MiniDBHandler(BaseHTTPRequestHandler):
             result = tree.get(key)
             self.send_text(200, result if result is not None else "(nil)")
 
+        elif path == "/set":
+            key = params.get("key", [None])[0]
+            value = params.get("value", [None])[0]
+            if not key or value is None:
+                self.send_text(400, "ERR: missing ?key= or ?value=")
+                return
+            log_operation("SET", key, value)
+            tree.set(key, value)
+            save(tree)
+            clear()
+            self.send_text(200, "OK")
+
+        elif path == "/delete":
+            key = params.get("key", [None])[0]
+            if not key:
+                self.send_text(400, "ERR: missing ?key=")
+                return
+            log_operation("DELETE", key)
+            tree.delete(key)
+            save(tree)
+            clear()
+            self.send_text(200, "OK")
+
         elif path == "/display":
             lines = []
             collect_display(tree.root, 0, lines)
