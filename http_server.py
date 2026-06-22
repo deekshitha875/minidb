@@ -140,6 +140,7 @@ def collect_display(node, level, lines):
 HOME_PAGE = """<!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>MiniDB</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -167,12 +168,12 @@ HOME_PAGE = """<!DOCTYPE html>
 </head>
 <body>
 <div class="container">
-  <h1>MiniDB 🗄️</h1>
-  <p>A key-value database engine built from scratch — B-tree storage, Write-Ahead Log, HTTP server.</p>
+  <h1>MiniDB</h1>
+  <p>A key-value database engine built from scratch. B-tree storage, Write-Ahead Log, HTTP server.</p>
 
   <!-- SET -->
   <div class="card">
-    <h2>SET — Store a value</h2>
+    <h2>SET - Store a value</h2>
     <div class="row">
       <input id="set-key" placeholder="key" />
       <input id="set-val" placeholder="value" />
@@ -183,7 +184,7 @@ HOME_PAGE = """<!DOCTYPE html>
 
   <!-- GET -->
   <div class="card">
-    <h2>GET — Retrieve a value</h2>
+    <h2>GET - Retrieve a value</h2>
     <div class="row">
       <input id="get-key" placeholder="key" />
       <button class="blue" onclick="doGet()">GET</button>
@@ -193,7 +194,7 @@ HOME_PAGE = """<!DOCTYPE html>
 
   <!-- DELETE -->
   <div class="card">
-    <h2>DELETE — Remove a key</h2>
+    <h2>DELETE - Remove a key</h2>
     <div class="row">
       <input id="del-key" placeholder="key" />
       <button class="red" onclick="doDelete()">DELETE</button>
@@ -203,7 +204,7 @@ HOME_PAGE = """<!DOCTYPE html>
 
   <!-- DISPLAY -->
   <div class="card">
-    <h2>DISPLAY — Show tree structure</h2>
+    <h2>DISPLAY - Show tree structure</h2>
     <button class="blue" onclick="doDisplay()">Show Tree</button>
     <div class="result" id="disp-result" style="white-space:pre;"></div>
   </div>
